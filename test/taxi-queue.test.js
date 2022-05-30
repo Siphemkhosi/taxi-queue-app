@@ -3,7 +3,7 @@ describe('The taxi queue app', function() {
 	it ('should allow people to join the queue', function() {
 
 		const taxiQueue = TaxiQueue();
-
+        
 		taxiQueue.joinQueue();
 		taxiQueue.joinQueue();
 		taxiQueue.joinQueue();
@@ -54,7 +54,7 @@ describe('The taxi queue app', function() {
 		taxiQueue.joinTaxiQueue();
 		taxiQueue.joinTaxiQueue();
 
-		assert.equal(3, taxi.taxiQueueLength());
+		assert.equal(3, taxiQueue.taxiQueueLength());
 
 	});
 
