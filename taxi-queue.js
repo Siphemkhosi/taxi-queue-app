@@ -1,10 +1,11 @@
 function TaxiQueue() {
 let peopleJoining = 0;
-
+let peopleLength =0;
 let taxiJoining = 0;
 let leavingTaxi =0;
 	function joinQueue() {
 		  peopleJoining++;    
+		  
 }
 
 
@@ -21,21 +22,31 @@ let leavingTaxi =0;
 	
 	}
 	function leaveTaxiQueue() {
-		peopleJoining -= 12;
+		
 		taxiJoining--;
-        
-
-}
+		
+		
+	}
+	
 
 	function queueLength() {
 		
-		return  peopleJoining >= 0  ;
-		
-		 
+		if(!(peopleLength  < 0)){
+			
+			return peopleJoining
+		}
+	if(peopleJoining < 0){
+		return !peopleLength;
 	}
+		
+	}
+	function minQueueLength(){
+	  return leaveTaxiQueue() < 0;
+	}
+	
 
 	function taxiQueueLength() {
-return taxiJoining  
+       return taxiJoining;
 	}
 
 	function taxiDepart(){
@@ -50,6 +61,7 @@ return taxiJoining
 		leaveTaxiQueue,
 		queueLength,
 		taxiQueueLength,
+		minQueueLength,
 		taxiDepart
 	}
 }
