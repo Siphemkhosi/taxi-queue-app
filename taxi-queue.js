@@ -10,7 +10,7 @@ let leavingTaxi =0;
 
 
 	
-
+ 
 	function leaveQueue() {
 			   peopleJoining--;
 	}
