@@ -1,67 +1,56 @@
 function TaxiQueue() {
 let peopleJoining = 0;
-let peopleLength =0;
+let peopleLeaving = 0;
+let TaxiLength =0;
 let taxiJoining = 0;
 let leavingTaxi =0;
+let departTaxi=0;
+
 	function joinQueue() {
-		  peopleJoining++;    
-		  
+     peopleJoining ++;
+	 return peopleJoining ;
+
 }
-
-
-	
- 
 	function leaveQueue() {
-			   peopleJoining--;
-	}
-	
-
-	function joinTaxiQueue() {
-	
-			taxiJoining++;
-	
-	}
-	function leaveTaxiQueue() {
 		
-		taxiJoining--;
-		
-		
+		peopleJoining --;
+		return peopleJoining ;
+	   
 	}
-	
 
 	function queueLength() {
-		
-		if(!(peopleLength  < 0)){
-			
-			return peopleJoining
+		let fullTaxi = 12;
+		if(taxiJoining--){
+				peopleJoining -= fullTaxi
+				peopleLeaving= peopleJoining;
 		}
-	if(peopleJoining < 0){
-		return !peopleLength;
-	}
 		
-	}
-	function minQueueLength(){
-	  return leaveTaxiQueue() < 0;
-	}
-	
+ return peopleLeaving;
+}
 
-	function taxiQueueLength() {
-       return taxiJoining;
+	function joinTaxiQueue() {
+		taxiJoining ++;
+		return taxiJoining;
+	
 	}
+
+
 
 	function taxiDepart(){
-      
-
+		let taxi = 1
+		 taxiJoining -= taxi;
+		 departTaxi= taxiJoining;
+		
+   return departTaxi;
 	}
 
 	return {
 		joinQueue,
 		leaveQueue,
 		joinTaxiQueue,
-		leaveTaxiQueue,
+		// leaveTaxiQueue,
 		queueLength,
-		taxiQueueLength,
-		minQueueLength,
+		// taxiQueueLength,
 		taxiDepart
 	}
 }
