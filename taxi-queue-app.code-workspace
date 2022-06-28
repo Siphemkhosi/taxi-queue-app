@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"name": "taxi-queue-app",
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5504
+	}
+}

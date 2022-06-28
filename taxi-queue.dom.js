@@ -8,26 +8,34 @@ const counterTaxiAElem = document.querySelector(".taxi_queue_count")
 const departTaxiAElem = document.querySelector(".depart")
 
 let peopleLength = 0;
-
+let taxiLength =0;
 joinQueueElem.addEventListener("click", function(){
-    counterAElem.innerHTML = theDom.joinQueue();
+  peopleLength = theDom.joinQueue()
+    counterAElem.innerHTML = peopleLength;
    
 })
 
 leaveQueueElem.addEventListener("click", function(){
-   
-  counterAElem.innerHTML = theDom.leaveQueue();
+   peopleLength = theDom.leaveQueue()
+  counterAElem.innerHTML = peopleLength;
 })
 
 joinTaxiQueueElem.addEventListener("click", function(){
-
-   counterTaxiAElem.innerHTML = theDom.joinTaxiQueue();
+ taxiLength = theDom.joinTaxiQueue()
+   counterTaxiAElem.innerHTML = taxiLength;
 
 })
 
 departTaxiAElem.addEventListener("click", ()=>{
-  counterTaxiAElem.innerHTML = theDom.taxiDepart();
-  counterAElem.innerHTML= theDom.queueLength();
+  
+console.log(peopleLength);
+ if(peopleLength >= 12 && taxiLength >= 1){
+   taxiLength = theDom.taxiDepart();
+   peopleLength = theDom.queueLength()
+  counterTaxiAElem.innerHTML = taxiLength;
+  counterAElem.innerHTML= peopleLength;
+
+ }
 })
 
 
